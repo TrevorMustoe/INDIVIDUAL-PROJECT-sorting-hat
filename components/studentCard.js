@@ -1,10 +1,4 @@
-// this is a reuable function that makes a card with boostrap for our student info
-
-
-// export allows us to export this reuable funtions so we can use it other scripts
-export const studentCard = (object) => { // this will pass on object (student list) once called
-
-  // start boostrap card
+/*export const studentCard = (object) => { 
   return  ` 
   <div class="card" id="card-container" >
       <div class="card-body">
@@ -17,3 +11,7 @@ export const studentCard = (object) => { // this will pass on object (student li
   </div>
   `
   }
+
+  // this will pass on object (student list) once called
+  // export allows us to export this reuable funtions so we can use it other scripts
+  // start boostrap card*/
