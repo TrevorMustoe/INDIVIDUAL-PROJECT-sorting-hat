@@ -1,5 +1,32 @@
-import { studentList } from "../data/reference";
 import { renderToDom } from "../utils/renderToDom";
+
+
+const studentList = [
+  {
+    id: 1,
+    student: "Harry",
+    house: "Griffindor",
+    img: "https://ik.imagekit.io/hpapi/harry.jpg"
+  },
+  {
+    id: 2,
+    student: "Ron",
+    house: "Ravenclaw",
+    img: "https://ik.imagekit.io/hpapi/ron.jpg",
+  },
+  {
+    id: 3,
+    student: "Jeff",
+    house: "Hufflepuff",
+    img: "https://ik.imagekit.io/hpapi/cedric.png"
+  },
+  {
+    id: 4,
+    student:  "John Cena",
+    house: "Slytherine",
+    img: "https://ik.imagekit.io/hpapi/goyle.jpg"
+  }
+  ]
 
 
 const studentCard = (object) => { 
@@ -15,6 +42,18 @@ const studentCard = (object) => {
   </div>
   `
   }
+
+
+// start remder to dom function
+  const renderToDom = (divId, htmlToRender) => {
+    // Creates a const and uses a query selector to grab the div we want to target
+      const selectedDiv = document.querySelector(divId);
+    // Accessing the inner html of the selected div and setting it to be whatever html we need to render here
+      selectedDiv.innerHTML = htmlToRender;
+    };
+
+
+    
 
   // this will pass on object (student list) once called
   // export allows us to export this reuable funtions so we can use it other scripts
