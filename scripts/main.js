@@ -25,7 +25,7 @@ const studentList = [
   }
   ]
 
-
+// creates a student card using boostrap
 const studentCard = (object) => { 
   return  ` 
   <div class="card" id="card-container" >
@@ -49,11 +49,6 @@ const studentCard = (object) => {
       selectedDiv.innerHTML = htmlToRender;
     };
 
-
-
-
-
-
 // this is a reusable function that creates takes an array (studentList) and returns 
 const renderCards = (array) => {
   //creates an empty string for us to store the card info in
@@ -66,8 +61,6 @@ const renderCards = (array) => {
   // calls the renderToDom function and passes in our div of cards and the varable of reStuff which is holding out array data
   renderToDom("#app", domString);
 }
-
-
 
  // function to filter animals with specific favorite color this takes in an array and it takes in a string that we are checking
   const filter = (array, houseName) => {
@@ -120,4 +113,4 @@ const renderCards = (array) => {
       renderCards(ravenHouse)
       console.log("Hello")
     })
-   // this puts the card on dom and passes in which array I need
+   
