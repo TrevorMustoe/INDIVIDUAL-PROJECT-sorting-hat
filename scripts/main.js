@@ -65,6 +65,12 @@ renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
 // End render to dom for intro page
 
 // make a sort function for our button that randomly sorts
+// needs to take in the user input
+// use math.random and math.floor to * 4 (ammount of houses)
+
+let newRandomHouse = () => {
+  let newHouse = ""
+}
 
   // create function that creates a new student card based on our use input 
     const newStudent = (event) => {
