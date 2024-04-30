@@ -45,9 +45,53 @@ const studentCard = (object) => {
   const renderToDom = (divId, htmlToRender) => {
     // Creates a const and uses a query selector to grab the div we want to target
       const selectedDiv = document.querySelector(divId);
+
     // Accessing the inner html of the selected div and setting it to be whatever html we need to render here
       selectedDiv.innerHTML = htmlToRender;
     };
+    
+
+//this is rendering my inro page to the screen
+renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">New Student's Name</label>
+    <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" placeholder="Enter Students Name Here">
+  
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>`)
+// End render to dom for intro page
+
+// make a sort function for our button that randomly sorts
+
+  // create function that creates a new student card based on our use input 
+    const newStudent = (event) => {
+      // prevenets from resetting the form right away
+      event.preventDefault()
+      // starts a new object to hold the user input info 
+      const newStudentObject = {
+        // this is the student id length plus one giving us the id of the new student
+        id: studentList.length + 1, 
+        // this will take our user input and add it to our name 
+        studentName: document.querySelector("#userInput").value
+      }
+      // this targets the studentList array and pushes the new student object to the end of it 
+      studentList.push(newStudentObject)
+      // resets the form 
+      form.reset()
+      // calls the new student list as a console.log for testing
+      console.log(studentList)
+    }
+    // create a querySelector on my form 
+    const form = document.querySelector("form")
+    form.addEventListener("submit", newStudent)
+
+  
+  
+  // use document.query selector looking at userinput and an event listener that is looking for the enter button on search
+
 
 // this is a reusable function that creates takes an array (studentList) and returns 
 const renderCards = (array) => {
@@ -113,4 +157,6 @@ const renderCards = (array) => {
       renderCards(ravenHouse)
       console.log("Hello")
     })
+   
+
    
