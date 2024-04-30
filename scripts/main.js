@@ -25,6 +25,8 @@ const studentList = [
   }
   ]
 
+//create a varable for each house using a switch case to store and assign house colors
+
 // creates a student card using boostrap
 const studentCard = (object) => { 
   return  ` 
@@ -70,6 +72,24 @@ renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
 
 let newRandomHouse = () => {
   let newHouse = ""
+  let randomizer = Math.ceil(Math.random() * 4);
+ switch (randomizer){
+  case 1:
+    newHouse = "Griffy"
+    break;
+  case 2:
+    newHouse = "You got Raven"
+    break;
+  case 3:
+    newHouse = "You got huffle "
+    break;
+  case 4:
+    newHouse = "You got snake"
+    break;
+    defult; 
+    console.log("Sorry You didn place bud")
+ }
+ return newHouse 
 }
 
   // create function that creates a new student card based on our use input 
@@ -81,7 +101,10 @@ let newRandomHouse = () => {
         // this is the student id length plus one giving us the id of the new student
         id: studentList.length + 1, 
         // this will take our user input and add it to our name 
-        studentName: document.querySelector("#userInput").value
+        studentName: document.querySelector("#userInput").value,
+        //this adds the random house to the house value
+        house: newRandomHouse(),
+
       }
       // this targets the studentList array and pushes the new student object to the end of it 
       studentList.push(newStudentObject)
@@ -89,10 +112,12 @@ let newRandomHouse = () => {
       form.reset()
       // calls the new student list as a console.log for testing
       console.log(studentList)
+      renderCards(studentList)
     }
     // create a querySelector on my form 
     const form = document.querySelector("form")
     form.addEventListener("submit", newStudent)
+ 
 
   
   
@@ -112,7 +137,7 @@ const renderCards = (array) => {
   renderToDom("#app", domString);
 }
 
- // function to filter animals with specific favorite color this takes in an array and it takes in a string that we are checking
+ // function to filter students with specific favorite color this takes in an array and it takes in a string that we are checking
   const filter = (array, houseName) => {
   // creates anohter empty array to store our filterd items
     const houseOfArray= [];
