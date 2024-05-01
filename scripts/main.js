@@ -9,7 +9,6 @@ const studentList = [
     id: 1,
     studentName: "Harry",
     house: "Griffindor",
-   
   },
   {
     id: 2,
