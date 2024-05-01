@@ -3,25 +3,22 @@ const studentList = [
     id: 1,
     studentName: "Harry",
     house: "Griffindor",
-    img: "https://cdn.pixabay.com/photo/2019/03/22/18/14/harry-potter-4073867_1280.png"
+   
   },
   {
     id: 2,
     studentName: "Ron",
     house: "Ravenclaw",
-    img: "https://ik.imagekit.io/hpapi/ron.jpg",
   },
   {
     id: 3,
     studentName: "Jeff",
     house: "Hufflepuff",
-    img: "https://ik.imagekit.io/hpapi/cedric.png"
   },
   {
     id: 4,
     studentName:  "John Cena",
-    house: "Snake",
-    img: "https://ik.imagekit.io/hpapi/goyle.jpg"
+    house: "Slytherin",
   }
   ]
 
@@ -33,7 +30,7 @@ const studentCard = (object) => {
   <div class="card" id="card-container" >
       <div class="card-body">
       <h5 id="cardTitle" class="card-title">${object.studentName}</h5>
-      <img class="card-img-top" src="${object.img}" alt="Student IMG" style="width: 200px;">
+    
         <p id="cardText" class="card-text">${object.house}</p>
         <hr></hr>
         <button class="btn btn-danger" id="expel--${object.id}">EXPEL</button>
@@ -71,11 +68,15 @@ renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
 // use math.random and math.floor to * 4 (ammount of houses)
 
 let newRandomHouse = () => {
+  // creates an empty array to store new house
   let newHouse = ""
+  // function to randomize math times 4 
   let randomizer = Math.ceil(Math.random() * 4);
+  // switch statement for assiging house 
+   console.log(randomizer)
  switch (randomizer){
   case 1:
-    newHouse = "Griffy"
+    newHouse = "Griffen"
     break;
   case 2:
     newHouse = "You got Raven"
@@ -89,6 +90,7 @@ let newRandomHouse = () => {
     defult; 
     console.log("Sorry You didn place bud")
  }
+ //returns newly assisigned string
  return newHouse 
 }
 
@@ -116,6 +118,7 @@ let newRandomHouse = () => {
     }
     // create a querySelector on my form 
     const form = document.querySelector("form")
+    // takes in the submit button and adds in the new student 
     form.addEventListener("submit", newStudent)
  
 
@@ -160,34 +163,48 @@ const renderCards = (array) => {
   const raveButton = document.querySelector("#rave-button")
   const huffButton = document.querySelector("#huff-button")
   const snakeButton = document.querySelector("#snake-button")
+// make this into one function
 
-  showAllButton.addEventListener("click", () => {
-    // this renders the type of pet we have selected at the top of the screen
-      renderCards(studentList)
-    });
+ let buttonsToDom = (buttonType, house) => {
+  let btn = buttonType.addEventListener("click", () => {
+    renderCards(house)
+  })
+ }
+ const griffHouse = filter(studentList, "Griffindor")
+ const ravenHouse = filter(studentList, "Ravenclaw")
+ const huffleHouse = filter(studentList, "Hufflepuff")
+ const slytherinHouse = filter(studentList, "Slytherin")
 
-    griffButton.addEventListener("click", ()=> {
-      const griffHouse = filter(studentList, "Griffindor")
-      renderCards(griffHouse)
-    })
+buttonsToDom(showAllButton, studentList)
+buttonsToDom(griffButton, griffHouse)
+buttonsToDom(raveButton, ravenHouse)
+buttonsToDom(huffButton, huffleHouse)
+buttonsToDom(snakeButton, slytherinHouse)
 
-    raveButton.addEventListener("click", ()=> {
-      const ravenHouse = filter(studentList, "Ravenclaw")
-      renderCards(ravenHouse)
-      console.log("Hello")
-    })
+  //showAllButton.addEventListener("click", () => {
+    // this renders the type of student we have selected at the top of the screen
+      //renderCards(studentList)
+   // });
 
-    huffButton.addEventListener("click", ()=> {
-      const ravenHouse = filter(studentList, "Hufflepuff")
-      renderCards(ravenHouse)
-      console.log("Hello")
-    })
+   // griffButton.addEventListener("click", ()=> {
+      
+      //renderCards(griffHouse)
+    //})
 
-    snakeButton.addEventListener("click", ()=> {
-      const ravenHouse = filter(studentList, "Snake")
-      renderCards(ravenHouse)
-      console.log("Hello")
-    })
+   // raveButton.addEventListener("click", ()=> {
+    //  const ravenHouse = filter(studentList, "Ravenclaw")
+     // renderCards(ravenHouse)
+  //  })
+
+  //  huffButton.addEventListener("click", ()=> {
+   //   const ravenHouse = filter(studentList, "Hufflepuff")
+   //   renderCards(ravenHouse)
+   // })
+
+   // snakeButton.addEventListener("click", ()=> {
+//const ravenHouse = filter(studentList, "Snake")
+   //   renderCards(ravenHouse)
+//})
    
 
    
