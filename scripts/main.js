@@ -1,3 +1,9 @@
+const showAllButton = document.querySelector("#show-btn");
+const griffButton = document.querySelector("#griff-button");
+const raveButton = document.querySelector("#rave-button")
+const huffButton = document.querySelector("#huff-button")
+const snakeButton = document.querySelector("#snake-button")
+
 const studentList = [
   {
     id: 1,
@@ -158,11 +164,7 @@ const renderCards = (array) => {
     return houseOfArray;
   };
 
-  const showAllButton = document.querySelector("#show-btn");
-  const griffButton = document.querySelector("#griff-button");
-  const raveButton = document.querySelector("#rave-button")
-  const huffButton = document.querySelector("#huff-button")
-  const snakeButton = document.querySelector("#snake-button")
+
 // make this into one function
 
  let buttonsToDom = (buttonType, house) => {
