@@ -60,7 +60,7 @@ renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">New Student's Name</label>
-    <input type="text" class="form-control" id="userInput" required aria-describedby="emailHelp" placeholder="Enter Students Name Here">
+    <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" required placeholder="Enter Students Name Here">
   
   </div>
   <br>
@@ -126,6 +126,8 @@ let newRandomHouse = () => {
     // takes in the submit button and adds in the new student 
     form.addEventListener("submit", newStudent)
  
+
+  
   
   // use document.query selector looking at userinput and an event listener that is looking for the enter button on search
 
