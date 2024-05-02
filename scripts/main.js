@@ -121,8 +121,6 @@ let newRandomHouse = () => {
     // takes in the submit button and adds in the new student 
     form.addEventListener("submit", newStudent)
  
-
-  
   
   // use document.query selector looking at userinput and an event listener that is looking for the enter button on search
 
