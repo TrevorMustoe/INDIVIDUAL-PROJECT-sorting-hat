@@ -60,7 +60,7 @@ renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">New Student's Name</label>
-    <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" placeholder="Enter Students Name Here">
+    <input type="text" class="form-control" id="userInput" required aria-describedby="emailHelp" placeholder="Enter Students Name Here">
   
   </div>
   <br>
