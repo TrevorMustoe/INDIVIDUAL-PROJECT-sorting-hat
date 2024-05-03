@@ -24,6 +24,26 @@ const studentList = [
     id: 4,
     studentName:  "John Cena",
     house: "Slytherin",
+  },
+  {
+    id: 5,
+    studentName:  "Laura",
+    house: "Slytherin",
+  },
+  {
+    id: 6,
+    studentName: "Geff",
+    house: "Hufflepuff",
+  },
+  {
+    id: 7,
+    studentName: "Wron",
+    house: "Ravenclaw",
+  },
+  {
+    id: 1,
+    studentName: "Garry",
+    house: "Griffindor",
   }
   ]
 
