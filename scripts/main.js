@@ -276,7 +276,7 @@ app.addEventListener("click", (e) => {
 
 // do the reverse of the function above to revert it back to an enrolled student?? 
 
-
+// THESE ARE JUST TESTS 
 //let fakeVar = "Hello this is a string im going to split"
 //let fakeArray = [1, 2, 3, 4, 5]
 //let newFakeArray = fakeArray.slice(2, );
