@@ -138,6 +138,18 @@ const renderCards = (array) => {
   renderToDom("#app", domString);
 }
 
+const renderVolCards = (array) => {
+  //creates an empty string for us to store the card info in
+  let domString = "";
+  // this iterates through an array (studentList) 
+  array.forEach((item) => {
+    //this adds the imported card boostrap function and add its to the empty array 
+    domString += studentCard(item);
+  });
+  // calls the renderToDom function and passes in our div of cards and the varable of reStuff which is holding out array data
+  renderToDom("#volKids", domString);
+}
+
  // function to filter students with specific favorite color this takes in an array and it takes in a string that we are checking
   const filter = (array, houseName) => {
   // creates anohter empty array to store our filterd items
@@ -204,5 +216,49 @@ buttonsToDom(snakeButton, slytherinHouse)
    //   renderCards(ravenHouse)
 //})
    
+
+// create a function that targets the expell button on the student cards, then use a split method on the id of the student, (use find index see notes in pet adoption) then use splice to get the expelled student into the new vold array and pain the dom with the new expelled kids.
+
+const app = document.querySelector("#app");
+
+// Add an event listener to capture clicks
+
+let badKids = []
+
+app.addEventListener("click", (e) => {
+
+  // 3. check e.target.id includes "delete"
+  if (e.target.id.includes("expel")) {
+    // destructuring: https://github.com/orgs/nss-evening-web-development/discussions/11
+    const [, id] = e.target.id.split("--");
+
+    // 4. add logic to remove from array
+    // .findIndex is an array method
+    const index = studentList.findIndex((member) => member.id === Number(id));
+
+    // this creates a new voldamort array using the index from above that was targeted
+    const newVolArray = studentList[index];
+    console.log(newVolArray)
+  
+    // .splice modifies the original array
+    studentList.splice(newVolArray, 1);
+    badKids.push(newVolArray)
+    console.log(studentList);
+    console.log("badKids =", badKids);
+    // 5. Repaint the DOM with the updated array
+  }
+  renderCards(studentList)
+  renderVolCards(badKids)
+});
+
+// do the reverse of the function above to revert it back to an enrolled student?? 
+
+
+//let fakeVar = "Hello this is a string im going to split"
+//let fakeArray = [1, 2, 3, 4, 5]
+//let newFakeArray = fakeArray.slice(2, );
+//let splitTest = fakeVar.split(" ")
+//console.log(newFakeArray)
+//console.log(splitTest[1])
 
    
