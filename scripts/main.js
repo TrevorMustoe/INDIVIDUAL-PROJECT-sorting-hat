@@ -7,6 +7,7 @@ const startButton = document.querySelector("#start-button")
 const startPage = document.querySelector("#start-page")
 const buttonDiv = document.querySelector("#buttons-div")
 const introPage = document.querySelector("#intro-page")
+const mainContain = document.querySelector("#main-contain")
 
 const studentList = [
   {
@@ -53,8 +54,11 @@ const studentList = [
 
   startButton.addEventListener("click", event => {
     buttonDiv.style.display = "block";
+    app2.style.display = "block";
     app.style.display = "block";
     introPage.style.display = "block";
+    startPage.style.display = "none";
+    mainContain.style.background = "#E7E3B0";
   })
 
 
@@ -122,7 +126,7 @@ let newRandomHouse = () => {
   // function to randomize math times 4 
   let randomizer = Math.ceil(Math.random() * 4);
   // switch statement for assiging house 
-   console.log(randomizer)
+   console.log("Random number= ", randomizer)
  switch (randomizer){
   case 1:
     newHouse = "Griffen"
@@ -158,7 +162,7 @@ let newRandomHouse = () => {
 
       }
       // this targets the studentList array and pushes the new student object to the end of it 
-      studentList.push(newStudentObject)
+      studentList.unshift(newStudentObject)
       // resets the form 
       form.reset()
       // calls the new student list as a console.log for testing
@@ -246,7 +250,7 @@ const renderVolCards = (array) => {
     });
 
     griffButton.addEventListener("click", ()=> {
-      
+      const griffHouse = filter(studentList, "Griffindor")
       renderCards(griffHouse)
     })
 
@@ -269,6 +273,7 @@ const ravenHouse = filter(studentList, "Slytherin")
 // create a function that targets the expell button on the student cards, then use a split method on the id of the student, (use find index see notes in pet adoption) then use splice to get the expelled student into the new vold array and pain the dom with the new expelled kids.
 
 const app = document.querySelector("#app");
+const app2 = document.querySelector("#app2");
 
 // Add an event listener to capture clicks
 
