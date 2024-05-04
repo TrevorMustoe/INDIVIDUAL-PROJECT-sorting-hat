@@ -1,14 +1,3 @@
-const showAllButton = document.querySelector("#show-btn");
-const griffButton = document.querySelector("#griff-button");
-const raveButton = document.querySelector("#rave-button")
-const huffButton = document.querySelector("#huff-button")
-const snakeButton = document.querySelector("#snake-button")
-const startButton = document.querySelector("#start-button")
-const startPage = document.querySelector("#start-page")
-const buttonDiv = document.querySelector("#buttons-div")
-const introPage = document.querySelector("#intro-page")
-
-
 const studentList = [
   {
     id: 1,
@@ -101,17 +90,20 @@ const studentCard = (object) => {
     // Accessing the inner html of the selected div and setting it to be whatever html we need to render here
       selectedDiv.innerHTML = htmlToRender;
     };
-
     
-// make a renderForm 
-// make a render buttons
-// make a start page 
-// hide the renderForm and renderButtons in the start page button
 
-
-
-
-
+//this is rendering my inro page to the screen
+renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">New Student's Name</label>
+    <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" placeholder="Enter Students Name Here">
+  
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>`)
+// End render to dom for intro page
 
 // make a sort function for our button that randomly sorts
 // needs to take in the user input
