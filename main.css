@@ -1,3 +1,63 @@
 body{
-  background-color: cadetblue;
+  background-color: #E7E3B0 !important;
+}
+
+#main-contain{
+  display: flex;
+  border: solid purple 5px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+background-image:url(assets/pics/hogwarts.avif);
+background-repeat: no-repeat;
+background-size:cover;
+}
+
+#start-page{
+margin: 20%;
+display: flex;
+border: 5px red solid;
+width: 50%;
+justify-content: center;
+align-items: center;
+align-content: center;
+flex-direction: column;
+padding-top: 40px;
+padding-bottom: 40px;
+background-color: #662F19;
+color: #E7E3B0;
+}
+
+#start-button{
+  border-style: none;
+  border-radius: 10px 0px 10px 0px;
+  background-color: #E7E3B0;
+}
+
+#intro-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border: blue solid 5px;
+  width: 70%;
+  text-align: center;
+}
+
+.cards-div{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#app{
+  border: orange dashed 4px;
+  width: 50%;
+}
+
+#volKids{
+  width: 50%;
 }
