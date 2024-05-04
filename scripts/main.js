@@ -8,6 +8,7 @@ const startPage = document.querySelector("#start-page")
 const buttonDiv = document.querySelector("#buttons-div")
 const introPage = document.querySelector("#intro-page")
 
+
 const studentList = [
   {
     id: 1,
