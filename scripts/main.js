@@ -3,6 +3,10 @@ const griffButton = document.querySelector("#griff-button");
 const raveButton = document.querySelector("#rave-button")
 const huffButton = document.querySelector("#huff-button")
 const snakeButton = document.querySelector("#snake-button")
+const startButton = document.querySelector("#start-button")
+const startPage = document.querySelector("#start-page")
+const buttonDiv = document.querySelector("#buttons-div")
+const introPage = document.querySelector("#intro-page")
 
 const studentList = [
   {
@@ -47,7 +51,13 @@ const studentList = [
   }
   ]
 
-//create a varable for each house using a switch case to store and assign house colors
+  startButton.addEventListener("click", event => {
+    buttonDiv.style.display = "block";
+    app.style.display = "block";
+    introPage.style.display = "block";
+  })
+
+
 
 // creates a student card using boostrap
 const studentCard = (object) => { 
@@ -64,8 +74,25 @@ const studentCard = (object) => {
   `
   }
 
+  const voldCards = (object) => {
+    return  ` 
+    <div class="card" id="card-container" >
+        <div class="card-body">
+        <h5 id="cardTitle" class="card-title">${object.studentName}</h5>
+      
+          <p id="cardText" class="card-text">${object.house}</p>
+          <hr></hr>
+          <button class="btn btn-danger" id="expel--${object.id}">EXPEL</button>
+        </div>
+    </div>
+    `
+  }
 
-// start remder to dom function
+  
+// make a function that hides the buttons and the rest of the info until button clicked
+
+
+// start render to dom function
   const renderToDom = (divId, htmlToRender) => {
     // Creates a const and uses a query selector to grab the div we want to target
       const selectedDiv = document.querySelector(divId);
@@ -73,20 +100,17 @@ const studentCard = (object) => {
     // Accessing the inner html of the selected div and setting it to be whatever html we need to render here
       selectedDiv.innerHTML = htmlToRender;
     };
-    
 
-//this is rendering my inro page to the screen
-renderToDom("#intro-page",  `<h1 class="choose">WELCOME TO HOGWARTS </h1>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">New Student's Name</label>
-    <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" required placeholder="Enter Students Name Here">
-  
-  </div>
-  <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>`)
-// End render to dom for intro page
+    
+// make a renderForm 
+// make a render buttons
+// make a start page 
+// hide the renderForm and renderButtons in the start page button
+
+
+
+
+
 
 // make a sort function for our button that randomly sorts
 // needs to take in the user input
@@ -113,7 +137,7 @@ let newRandomHouse = () => {
     newHouse = "You got snake"
     break;
     defult; 
-    console.log("Sorry You didn place bud")
+    console.log("Sorry You didnt place bud")
  }
  //returns newly assisigned string
  return newHouse 
@@ -138,7 +162,7 @@ let newRandomHouse = () => {
       // resets the form 
       form.reset()
       // calls the new student list as a console.log for testing
-      console.log(studentList)
+     
       renderCards(studentList)
     }
     // create a querySelector on my form 
@@ -208,36 +232,38 @@ const renderVolCards = (array) => {
  const huffleHouse = filter(studentList, "Hufflepuff")
  const slytherinHouse = filter(studentList, "Slytherin")
 
-buttonsToDom(showAllButton, studentList)
-buttonsToDom(griffButton, griffHouse)
-buttonsToDom(raveButton, ravenHouse)
-buttonsToDom(huffButton, huffleHouse)
-buttonsToDom(snakeButton, slytherinHouse)
+//buttonsToDom(showAllButton, studentList)
+//buttonsToDom(griffButton, griffHouse)
+//buttonsToDom(raveButton, ravenHouse)
+//buttonsToDom(huffButton, huffleHouse)
+//buttonsToDom(snakeButton, slytherinHouse)
 
-  //showAllButton.addEventListener("click", () => {
+
+
+  showAllButton.addEventListener("click", () => {
     // this renders the type of student we have selected at the top of the screen
-      //renderCards(studentList)
-   // });
+      renderCards(studentList)
+    });
 
-   // griffButton.addEventListener("click", ()=> {
+    griffButton.addEventListener("click", ()=> {
       
-      //renderCards(griffHouse)
-    //})
+      renderCards(griffHouse)
+    })
 
-   // raveButton.addEventListener("click", ()=> {
-    //  const ravenHouse = filter(studentList, "Ravenclaw")
-     // renderCards(ravenHouse)
-  //  })
+    raveButton.addEventListener("click", ()=> {
+     const ravenHouse = filter(studentList, "Ravenclaw")
+     renderCards(ravenHouse)
+  })
 
-  //  huffButton.addEventListener("click", ()=> {
-   //   const ravenHouse = filter(studentList, "Hufflepuff")
-   //   renderCards(ravenHouse)
-   // })
+    huffButton.addEventListener("click", ()=> {
+     const ravenHouse = filter(studentList, "Hufflepuff")
+     renderCards(ravenHouse)
+    })
 
-   // snakeButton.addEventListener("click", ()=> {
-//const ravenHouse = filter(studentList, "Snake")
-   //   renderCards(ravenHouse)
-//})
+   snakeButton.addEventListener("click", ()=> {
+const ravenHouse = filter(studentList, "Slytherin")
+     renderCards(ravenHouse)
+})
    
 
 // create a function that targets the expell button on the student cards, then use a split method on the id of the student, (use find index see notes in pet adoption) then use splice to get the expelled student into the new vold array and pain the dom with the new expelled kids.
@@ -272,6 +298,7 @@ app.addEventListener("click", (e) => {
   }
   renderCards(studentList)
   renderVolCards(badKids)
+
 });
 
 // do the reverse of the function above to revert it back to an enrolled student?? 
@@ -283,5 +310,3 @@ app.addEventListener("click", (e) => {
 //let splitTest = fakeVar.split(" ")
 //console.log(newFakeArray)
 //console.log(splitTest[1])
-
-   

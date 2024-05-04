@@ -10,29 +10,47 @@
 <body>
 
   <!--This the div that will hold my intro page-->
-  <div id="intro-page"></div>
+  <div id="start-page">
+  <h1 class="choose">WELCOME TO HOGWARTS </h1>
+    <button id="start-button">CLICK HERE TO APPLY</button>
+</div>
+
+  <div id="intro-page" style="display: none;">
+    <form>
+      <div class="form-group">
+        <label for="userInput">New Student's Name</label>
+        <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" required placeholder="Enter Students Name Here">
+      
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
  
 <br>
     
-    <div class="typeAndButton">
-    <div class="button-container">
-    <button type="button" class="btn btn-secondary" id="show-btn">Show All</button>
-    <button class="btn btn-info" type="button" id="griff-button">Griffindor </button>
-    <button class="btn btn-success" type="button" id="rave-button">Ravenclaw</button>
-    <button class="btn btn-warning" type="button" id="huff-button">Hufflepuff</button>
-    <button class="btn btn-info" type="button" id="snake-button">Snake</button>
+    <div id="buttons-div" style="display: none;">
+    
+      <div class="button-container">
+    <button type="button" class="btn btn-secondary" id="show-btn" >Show All</button>
+    <button class="btn btn-info" type="button" id="griff-button" >Griffindor </button>
+    <button class="btn btn-success" type="button" id="rave-button" >Ravenclaw</button>
+    <button class="btn btn-warning" type="button" id="huff-button" >Hufflepuff</button>
+    <button class="btn btn-info" type="button" id="snake-button" >Snake</button>
     </div>
   
     <div class="type-text" id="type"></div>
   </div>
-    <div id="app"></div>
+    <div id="app" style="display: none;"></div>
     <br>
     <br>
     <hr>
 
     <!--This is the div I am rendering cards to the dom from my data-->
-    <div id="app"></div>
-    <p2>BAD KIDS</p2>
+    <div id="app" style="display: none;">
+      <p2>BAD KIDS</p2>
+    </div>
+    
     <div id="volKids"></div>
 
   
