@@ -8,6 +8,7 @@ const startPage = document.querySelector("#start-page")
 const buttonDiv = document.querySelector("#buttons-div")
 const introPage = document.querySelector("#intro-page")
 const mainContain = document.querySelector("#main-contain")
+const cardsDiv = document.querySelector("#cards-div")
 
 const studentList = [
   {
@@ -55,10 +56,11 @@ const studentList = [
   startButton.addEventListener("click", event => {
     buttonDiv.style.display = "block";
     app2.style.display = "block";
-    app.style.display = "block";
+    app.style.display = "flex";
     introPage.style.display = "block";
     startPage.style.display = "none";
-    mainContain.style.background = "#E7E3B0";
+  
+    cardsDiv.style.display = "flex";
   })
 
 
@@ -81,12 +83,11 @@ const studentCard = (object) => {
   const voldCards = (object) => {
     return  ` 
     <div class="card" id="card-container" >
-        <div class="card-body">
+        <div class="card-body" id="volRed" >
         <h5 id="cardTitle" class="card-title">${object.studentName}</h5>
       
           <p id="cardText" class="card-text">${object.house}</p>
           <hr></hr>
-          <button class="btn btn-danger" id="expel--${object.id}">EXPEL</button>
         </div>
     </div>
     `
@@ -105,20 +106,7 @@ const studentCard = (object) => {
       selectedDiv.innerHTML = htmlToRender;
     };
 
-    
-// make a renderForm 
-// make a render buttons
-// make a start page 
-// hide the renderForm and renderButtons in the start page button
 
-
-
-
-
-
-// make a sort function for our button that randomly sorts
-// needs to take in the user input
-// use math.random and math.floor to * 4 (ammount of houses)
 
 let newRandomHouse = () => {
   // creates an empty array to store new house
@@ -199,7 +187,7 @@ const renderVolCards = (array) => {
   // this iterates through an array (studentList) 
   array.forEach((item) => {
     //this adds the imported card boostrap function and add its to the empty array 
-    domString += studentCard(item);
+    domString += voldCards(item);
   });
   // calls the renderToDom function and passes in our div of cards and the varable of reStuff which is holding out array data
   renderToDom("#volKids", domString);
@@ -305,6 +293,8 @@ app.addEventListener("click", (e) => {
   renderVolCards(badKids)
 
 });
+
+
 
 // do the reverse of the function above to revert it back to an enrolled student?? 
 

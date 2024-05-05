@@ -1,24 +1,40 @@
 body{
-  background-color: #E7E3B0 !important;
+  width: 100%;
+  height: 100vh;
+  background-image: url(assets/pics/hogwarts.avif);
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button-container{
+  color: #E7E3B0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
 }
 
 #main-contain{
   display: flex;
-  border: solid purple 5px;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-background-image:url(assets/pics/hogwarts.avif);
 background-repeat: no-repeat;
 background-size:cover;
+background-color: none;
 }
 
 #start-page{
 margin: 20%;
 display: flex;
-border: 5px red solid;
+border-radius: 90px 0px 90px 0px;
 width: 50%;
 justify-content: center;
 align-items: center;
@@ -42,22 +58,69 @@ color: #E7E3B0;
   align-items: center;
   align-content: center;
   justify-content: center;
-  border: blue solid 5px;
+ 
   width: 70%;
   text-align: center;
+  margin-top: 30px;
+}
+
+#form-main{
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 90px 0px 90px 0px;;
+}
+
+.form-inst{
+  font-size: 40px;
+  color: wheat;
 }
 
 .cards-div{
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
+}
+
+.goodKidsDiv{
+  background-color: rgba(20, 87, 13, 0.5);
+  color: white;
+  width: 50%;
+  text-align: center;
+}
+
+.badKidsDiv{
+ background-color: grey;
+  width: 50%;
+  text-align: center;
 }
 
 #app{
-  border: orange dashed 4px;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 20px;
 }
 
 #volKids{
-  width: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 20px;
+}
+
+#volRed{
+  background-color: red;
+  color: white;
+}
+
+#card-container{
+margin: 10px;
+width: 150px;
+height: 150px;
 }
