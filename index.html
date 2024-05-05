@@ -17,9 +17,9 @@
 </div>
 
   <div id="intro-page" style="display: none;">
-    <form>
+    <form id="form-main">
       <div class="form-group">
-        <label for="userInput">New Student's Name</label>
+        <label for="userInput" class="form-inst">WELCOME TO HOGWARTS</label>
         <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" required placeholder="Enter Students Name Here">
       
       </div>
@@ -33,29 +33,40 @@
     <div id="buttons-div" style="display: none;">
     
       <div class="button-container">
+        <h2>Click Here to see House Members</h2>
     <button type="button" class="btn btn-secondary" id="show-btn" >Show All</button>
     <button class="btn btn-info" type="button" id="griff-button" >Griffindor </button>
     <button class="btn btn-success" type="button" id="rave-button" >Ravenclaw</button>
     <button class="btn btn-warning" type="button" id="huff-button" >Hufflepuff</button>
     <button class="btn btn-info" type="button" id="snake-button" >Snake</button>
+    <br>
+    <br>
     </div>
   
     <div class="type-text" id="type"></div>
   </div>
-  <div class="cards-div">
-    <div id="app" style="display: none;"></div>
-    <br>
-    <br>
-    <hr>
+  <div id="cards-div" class="cards-div" style="display: none;">
 
-    <!--This is the div I am rendering cards to the dom from my data-->
-    <div id="app2" style="display: none;">
-      <p2>BAD KIDS</p2>
+    <div class="goodKidsDiv">
+    <h3>CURRENTLY ENROLLED</h3>
+    <div id="app" style="display: none;">
     </div>
+  </div>
+    <!--This is the div I am rendering cards to the dom from my data-->
+
+    <div class="badKidsDiv">
+    <h3>EXPELLED</h3>
+    <div id="app2" style="display: none;">
     
-    <div id="volKids"></div>
+      <div id="volKids"></div>
+    </div>
+  </div>
+    
+    
   </div>
   </div>
+  <br>
+  <br>
 
   
   <script src="/scripts/main.js"></script>
