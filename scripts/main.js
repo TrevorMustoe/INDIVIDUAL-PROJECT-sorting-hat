@@ -117,16 +117,16 @@ let newRandomHouse = () => {
    console.log("Random number= ", randomizer)
  switch (randomizer){
   case 1:
-    newHouse = "Griffen"
+    newHouse = "Griffindor"
     break;
   case 2:
-    newHouse = "You got Raven"
+    newHouse = "Ravenclaw"
     break;
   case 3:
-    newHouse = "You got huffle "
+    newHouse = "Hufflepuff"
     break;
   case 4:
-    newHouse = "You got snake"
+    newHouse = "Slytherin"
     break;
     defult; 
     console.log("Sorry You didnt place bud")
